@@ -1,0 +1,23 @@
+{
+  "name": "cc1",
+  "version": "1.0.0",
+  "description": "Ceci est le README du projet CC1 pour le cours Clean Code du 30 octobre 2025.",
+  "homepage": "https://github.com/LucasVerrecchia/TPCleanCode#readme",
+  "bugs": {
+    "url": "https://github.com/LucasVerrecchia/TPCleanCode/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasVerrecchia/TPCleanCode.git"
+  },
+  "license": "ISC",
+  "author": "LucasV",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "vitest": "^4.0.5"
+  }
+}
