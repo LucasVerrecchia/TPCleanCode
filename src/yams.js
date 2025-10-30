@@ -15,6 +15,18 @@ export function isFull(dices) {
     return occurrences.length === 2 && occurrences[0] === 3 && occurrences[1] === 2;
 }
 
+export function isStraight(dices) {
+    const sorted = [...dices].sort((a, b) => a - b);
+    for (let i = 0; i < sorted.length - 1; i++) {
+        if (sorted[i + 1] - sorted[i] !== 1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+// Transparence : les fonctions ci dessus ont été largement alimenté par IA par souci de rapidité.
+
 const SCORE_BY_OCCURRENCES = {
     5: 50,  // Yams
     4: 35,  // Carré
@@ -34,7 +46,7 @@ export function calculateBestScore(dices = [[1, 1, 1, 1, 1], [1, 2, 5, 6, 2], [1
         return 20;  // Brelan simple
     }
 
-    if (dices[0][0] !== dices[0][1] && dices[0][1] !== dices[0][2] && dices[0][2] !== dices[0][3] && dices[0][3] !== dices[0][4]) {
+    if (isStraight(dices[0])) {
         return 40;  // Suite
     }
 
