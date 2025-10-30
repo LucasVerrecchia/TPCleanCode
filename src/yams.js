@@ -6,25 +6,17 @@ export function getMaxOccurrences(dices) {
     return Math.max(...Object.values(counts));
 }
 
-export function calculateBestScore(dices = [[1, 1, 1, 1, 1]]) {
+const SCORE_BY_OCCURRENCES = {
+    5: 50,  // Yams
+    4: 35,  // Carré
+    3: 28,  // Brelan
+};
+
+export function calculateBestScore(dices = [[1, 1, 1, 1, 1], [1, 2, 5, 6, 2]]) {
     if (!dices.length) {
         return 0;
     }
 
     const maxOccurrences = getMaxOccurrences(dices[0]);
-
-    if (maxOccurrences === 5) {
-        return 50;
-    }
-
-    if (maxOccurrences === 4) {
-        return 35;
-    }
-
-    if (maxOccurrences === 3) {
-        return 28;
-    }
-
-    return 0;
+    return SCORE_BY_OCCURRENCES[maxOccurrences] || 0;
 }
-

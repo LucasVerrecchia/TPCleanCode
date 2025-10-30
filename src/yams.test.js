@@ -17,7 +17,7 @@ describe("getMaxOccurrences helper function", () => {
     });
 });
 
-// Tests pour le main (calulateBestScore)
+// Tests pour le main (calulateBestScore) - tests ASSERT TRUE
 
 describe("calculateBestScore without dices", () => {
     it("should return 0 for an empty / undefined array", () => {
@@ -58,5 +58,13 @@ describe("calculateBestScore Full (3 of a kind + 2 of a kind) with the 3 first s
 describe("calculateBestScore Full (3 of a kind + 2 of a kind) with 3 random same dices", () => {
     it("should return 28 for [2, 2, 3, 3, 2]", () => {
         expect(calculateBestScore([[2, 2, 3, 3, 2], [1, 2, 3, 5, 6]])).toBe(28);
+    });
+});
+
+// tests ASSERT FALSE
+
+describe("calculateBestScore Yams without 5 same dices", () => {
+    it("should not return 50 for [1, 1, 1, 1, 2]", () => {
+        expect(calculateBestScore([[1, 1, 1, 1, 2], [1, 2, 3, 5, 6]])).not.toBe(50);
     });
 });
