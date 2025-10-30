@@ -25,13 +25,17 @@ export function calculateBestScore(dices = [[1, 1, 1, 1, 1], [1, 2, 5, 6, 2], [1
         return 0;
     }
 
-    const maxOccurrences = getMaxOccurrences(dices[0]); // on part du principe que le joueur garde son premier lancer (voir regles dans readme)
+    const maxOccurrences = getMaxOccurrences(dices[0]); // on part du principe que le joueur garde son premier lancer : [1, 1, 1, 1, 1] (voir regles dans readme)
 
     if (maxOccurrences === 3) {
         if (isFull(dices[0])) {
             return 28;  // Full
         }
         return 20;  // Brelan simple
+    }
+
+    if (dices[0][0] !== dices[0][1] && dices[0][1] !== dices[0][2] && dices[0][2] !== dices[0][3] && dices[0][3] !== dices[0][4]) {
+        return 40;  // Suite
     }
 
     return SCORE_BY_OCCURRENCES[maxOccurrences] || 0;

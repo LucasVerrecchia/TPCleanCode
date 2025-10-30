@@ -87,6 +87,12 @@ describe("calculateBestScore Brelan (3 of a kind only, no pair)", () => {
     });
 });
 
+describe("calculateBestScore for Suite (1-2-3-4-5)", () => {
+    it("should return 0 for [1, 2, 3, 4, 5]", () => {
+        expect(calculateBestScore([[1, 2, 3, 4, 5], [1, 2, 3, 5, 6]])).toBe(40);
+    });
+});
+
 // tests ASSERT FALSE
 
 describe("calculateBestScore Yams without 5 same dices", () => {
