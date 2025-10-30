@@ -15,3 +15,5 @@ source : https://www.agoralude.com/blog/-la-regle-du-yams-ou-du-jeu-du-yahtzee-n
 
 ## Commentaires
 
+Je n'ai pas eu le temps de m'attaquer a la logiqe de total des points, surtout a cause d'une incomprehension du sujet de ma part (pour moi le yams on garce qu'un lancer pour compter son score) : du coup j'ai compris trop tard que le but etait de calculer la somme des scores de tout les lancés passé en paramètre plutot que de juste calculer un score pour un lancer donné.
+Mais si on appelle la fonction pour chaque lancé et qu'on additionne les resultats, cela devrait résoudre le problème.

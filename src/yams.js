@@ -25,7 +25,7 @@ export function isStraight(dices) {
     return true;
 }
 
-// Transparence : les fonctions ci dessus ont été largement alimenté par IA par souci de rapidité.
+// Transparence : les fonctions ci dessus ont été largement alimenté par IA par souci de rapidité / efficacité.
 
 const SCORE_BY_OCCURRENCES = {
     5: 50,  // Yams
