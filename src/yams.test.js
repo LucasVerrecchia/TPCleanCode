@@ -1,5 +1,23 @@
 import { describe, it, expect } from "vitest";
-import { calculateBestScore } from "./yams.js";
+import { calculateBestScore, getMaxOccurrences } from "./yams.js";
+
+// Tests pour la fonction getMaxOccurences (pas sur que ca soit utile mais si j'ai bien compris TDD = overkill :p)
+
+describe("getMaxOccurrences helper function", () => {
+    it("should return 5 for [1, 1, 1, 1, 1]", () => {
+        expect(getMaxOccurrences([1, 1, 1, 1, 1])).toBe(5);
+    });
+
+    it("should return 4 for [2, 2, 2, 2, 3]", () => {
+        expect(getMaxOccurrences([2, 2, 2, 2, 3])).toBe(4);
+    });
+
+    it("should return 3 for [2, 2, 2, 3, 4]", () => {
+        expect(getMaxOccurrences([2, 2, 2, 3, 4])).toBe(3);
+    });
+});
+
+// Tests pour le main (calulateBestScore)
 
 describe("calculateBestScore without dices", () => {
     it("should return 0 for an empty / undefined array", () => {
